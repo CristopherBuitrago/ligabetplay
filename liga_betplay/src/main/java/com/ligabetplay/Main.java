@@ -1,22 +1,63 @@
 package com.ligabetplay;
 
-import com.ligabetplay.model.entity.Player;
-import com.ligabetplay.model.entity.Team;
+import java.util.Scanner;
+
+import com.ligabetplay.views.ViewCoach;
+import com.ligabetplay.views.ViewDoctor;
+import com.ligabetplay.views.ViewPlayer;
+import com.ligabetplay.views.ViewTeam;
 
 public class Main {
     public static void main(String[] args) {
         Controller ctrlTeams = new Controller();
-        Team equipo = new Team();
-        Player jugador = new Player(1, "Cristopher", "Palomino", 17, 2, "Portero");
+        ViewTeam.controlador = ctrlTeams;
+        ViewPlayer.controlador = ctrlTeams;
+        ViewDoctor.controlador = ctrlTeams;
+        ViewCoach.controlador = ctrlTeams;
         
-        equipo.setLstJugadores(jugador);
-        equipo.setCiudad("Bucaramanga");
-        equipo.setNombre("Bucaros");
-        ctrlTeams.equipos.put("001", equipo);
+        Scanner scanner = new Scanner(System.in);
 
-        equipo = ctrlTeams.equipos.get("001");
+        while (true) {
+            System.out.println("1. Entrenadores");
+            System.out.println("2. Masajistas");
+            System.out.println("3. Jugadores");
+            System.out.println("4. Equipos");
+            System.out.println("5. Salir");
+            int choice = scanner.nextInt();
+            scanner.nextLine(); // Consume newline
 
-        System.out.println("Mi equipo: "+equipo.getNombre());
-        System.out.println("Jugador: "+equipo.getLstJugadores().get(0).getNombre());
+            switch (choice) {
+                case 1:
+                    
+                    break;
+                
+                case 2:
+                    ViewDoctor vd = new ViewDoctor(scanner);
+                    vd.start();
+                    break;
+                
+                case 3:
+                    ViewPlayer vp = new ViewPlayer(scanner);
+                    vp.start();
+                    break;
+
+                case 4:
+                    ViewTeam vt = new ViewTeam(scanner);
+                    vt.start();
+                    break;
+
+                case 5:
+                    scanner.close();
+                    System.exit(0);
+                    break;
+
+                default:
+
+                    break;
+
+            }
+        }
+        
+        
     }
 }

@@ -15,6 +15,8 @@ public class Doctor extends Person{
         this.expYear = expYear;
     }
 
+    public Doctor(){};
+
     public String getTitulo() {
         return titulo;
     }
