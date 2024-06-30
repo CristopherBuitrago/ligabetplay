@@ -1,12 +1,13 @@
-# BetPlay Project
+# BetPlay
 
-Welcome to the BetPlay Project! This is a Java-based project developed to demonstrate the use of CRUD operations for managing teams, doctors, and coaches. The project is structured using Maven for easy project management and dependency handling.
+Welcome to BetPlay! This is a Java-based project developed to demonstrate the use of CRUD operations for managing teams, doctors, and coaches. The project is structured using Maven for easy project management and dependency handling.
 
 ## Table of Contents
 
 - [Project Overview](#project-overview)
 - [Features](#features)
 - [Technologies Used](#technologies-used)
+
 - [Getting Started](#getting-started)
 - [Installation](#installation)
 - [Usage](#usage)
